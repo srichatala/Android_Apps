@@ -21,17 +21,33 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				//Initialization of EditTexts
 				EditText firstname = (EditText)findViewById(R.id.txtFirstname);
 				EditText lastname = (EditText)findViewById(R.id.txtLastname);
 				EditText phoneno = (EditText)findViewById(R.id.txtPhoneno);
 				EditText address = (EditText)findViewById(R.id.txtAddress);
 				EditText email = (EditText)findViewById(R.id.txtEmail);
 				
+				//getting values from edittexts
 				String f_name = (firstname.getText().toString()); 
+				String l_name = (lastname.getText().toString());
+				String phone_no = (phoneno.getText().toString());
+				String _address = (address.getText().toString());
+				String _email = (email.getText().toString());
 				
+				//Initialization of labels
 				TextView fname = (TextView)findViewById(R.id.lblFirstname);
+				TextView lname = (TextView)findViewById(R.id.lblLastname);
+				TextView pno = (TextView)findViewById(R.id.lblPhoneno);
+				TextView address_ = (TextView)findViewById(R.id.lblAddress);
+				TextView e_mail = (TextView)findViewById(R.id.lblEmail);
+				
+				//passing values from editText to labels
 				fname.setText(f_name);
+				lname.setText(l_name);
+				pno.setText(phone_no);
+				address_.setText(_address);
+				e_mail.setText(_email);
 				
 				
 			}
