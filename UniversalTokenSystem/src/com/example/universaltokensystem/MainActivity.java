@@ -36,13 +36,15 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main); 
         Button submit = (Button)findViewById(R.id.btnLogin);
         submit.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Button submit = (Button)findViewById(R.id.btnLogin);
+				//EditText StudentID = (EditText)findViewById(R.id.txtStudentID);
 				submit.setClickable(false);
 				new RestOperations().execute();
+				//StudentID.setText("");
+				
 			}
 		});
     }
@@ -79,7 +81,7 @@ public class MainActivity extends Activity {
     		HttpClient httpClient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			EditText StudentID = (EditText)findViewById(R.id.txtStudentID);
-			String SId = StudentID.getText().toString().trim();
+			String SId = StudentID.getText().toString().trim();	
 			String restStudentURL = "http://cctoken.azurewebsites.net/api/students/?StudentID="+SId;
             HttpGet httpGet = new HttpGet(restStudentURL);
             String text = null;
@@ -97,16 +99,17 @@ public class MainActivity extends Activity {
     	protected void onPostExecute(String result) {
     		// TODO Auto-generated method stub
     		super.onPostExecute(result);
+    		
     		//Gson gson = new Gson();
     		//String data = gson.toJson(result);
-    		if (result.equals("/[]")) {
+    		if (result.equals("[]")) {
     			TextView errorMSG = (TextView)findViewById(R.id.error);
 				errorMSG.setText("Invalid StudentID");
+				progressDailog.dismiss();
 			}else{
-				TextView errorMSG = (TextView)findViewById(R.id.error);
-				errorMSG.setText(result);
-				/*Intent intent = new Intent(MainActivity.this,Campus.class);
-				startActivity(intent);*/
+				Intent intent = new Intent(MainActivity.this,Campus.class);
+				startActivity(intent);
+				progressDailog.dismiss();
 			}
     	}
     }		
