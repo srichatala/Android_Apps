@@ -27,7 +27,7 @@
         android:background="#42454a" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/StudentID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,7 +40,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/txtCamName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
         android:text="@string/submitstudentnum"
@@ -48,11 +48,11 @@
         android:background="#42454a" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtCamName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignStart="@+id/textView1"
+        android:layout_alignLeft="@+id/StudentID"
+        android:layout_alignStart="@+id/StudentID"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
@@ -63,9 +63,9 @@
         android:id="@+id/txtStudentID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_alignTop="@+id/txtCamName"
+        android:layout_toEndOf="@+id/txtCamName"
+        android:layout_toRightOf="@+id/txtCamName"
         android:ems="6"
         android:inputType="number" >
 

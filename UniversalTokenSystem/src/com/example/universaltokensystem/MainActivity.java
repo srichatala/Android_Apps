@@ -105,12 +105,18 @@ public class MainActivity extends Activity {
     		if (result.equals("[]")) {
     			TextView errorMSG = (TextView)findViewById(R.id.error);
 				errorMSG.setText("Invalid StudentID");
-				progressDailog.dismiss();
+//				progressDailog.dismiss();
 			}else{
 				Intent intent = new Intent(MainActivity.this,Campus.class);
+				//String[] StudentInfo = new String[] {result};
+				intent.putExtra("StudentInfo", result);
+				//EditText StudentID1 = (EditText)findViewById(R.id.txtStudentID);
+				//intent.putExtra("SID", StudentID1.getText().toString());
+				//intent.putExtra("StudentInfo", result);
 				startActivity(intent);
-				progressDailog.dismiss();
 			}
+    		((EditText)findViewById(R.id.txtStudentID)).setText("");
+    		progressDailog.dismiss();
     	}
     }		
     @Override
