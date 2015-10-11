@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="com.example.com.example.listof02_comp304students.MainActivity" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgViewAlagu"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/alagu"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnAlagu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_below="@+id/imageView1"
+            android:minHeight="15dip"
+            android:text="Alagu Murugappan: Team Lead" />
+
+        <ImageView
+            android:id="@+id/imgViewVangli"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignLeft="@+id/btnAlagu"
+            android:layout_below="@+id/btnAlagu"
+            android:src="@drawable/vangli"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnVangli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="20dip"
+            android:text=" Vangli Rajan" />
+
+        <ImageView
+            android:id="@+id/imgViewSandy"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_below="@+id/btnVangli"
+            android:src="@drawable/sandeep"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSandy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:minHeight="20dp"
+            android:text="Sandeep Reddivari" />
+
+        <ImageView
+            android:id="@+id/imgViewEvlyn"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/imageView3"
+            android:layout_toLeftOf="@+id/btnSandy"
+            android:src="@drawable/evlyn"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnEvlyn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:minHeight="20dp"
+            android:text="Evlyn Peter" />
+
+        <ImageView
+            android:id="@+id/imgViewSateesh"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/imageView6"
+            android:layout_toLeftOf="@+id/btnEvlyn"
+            android:src="@drawable/satheesh_pic"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSateesh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="17dp"
+            android:minHeight="25dp"
+            android:text="Sateesh Francis" />
+
+        <ImageView
+            android:id="@+id/imgViewSri"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignTop="@+id/button6"
+            android:layout_toLeftOf="@+id/btnEvlyn"
+            android:visibility="invisible"
+            android:src="@drawable/sa" />
+
+        <Button
+            android:id="@+id/btnSri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnEvlyn"
+            android:layout_below="@+id/imageView4"
+            android:minHeight="20dp"
+            android:text="Sri Chatala" />
+
+    </LinearLayout>
+</ScrollView>
+	
+</RelativeLayout>
