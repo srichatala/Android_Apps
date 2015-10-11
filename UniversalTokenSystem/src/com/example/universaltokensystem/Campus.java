@@ -31,6 +31,9 @@ import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -104,24 +107,32 @@ public class Campus extends Activity {
 	    	protected void onPostExecute(String result) {
 	    		// TODO Auto-generated method stub
 	    		super.onPostExecute(result);
-	    		TextView name = (TextView)findViewById(R.id.txtCamName);
-	    		TextView address = (TextView)findViewById(R.id.txtAddress);
-	    		TextView contactno = (TextView)findViewById(R.id.txtContactNo);
+	    		final ArrayList<String> items = new ArrayList<String>();		
+	    		ListView listView = (ListView) findViewById(R.id.listCampus);
 	    		try {
-	    			JSONArray stList = new JSONArray(result);
-	    			for(int i = 0; i<stList.length();i++){
-	    				JSONObject stObj = stList.getJSONObject(i);
-	    				String cam_Name = stObj.getString("CampusName");
-	    				String cam_Address = stObj.getString("Address");
-	    				String cam_Contact = stObj.getString("ContactNo");
-	    				name.setText(cam_Name);
-	    				address.setText(cam_Address);
-	    				contactno.setText(cam_Contact);
-	    			}
-	    		} catch (JSONException e) {
-	    			// TODO Auto-generated catch block
-	    			e.printStackTrace();
-	    		}
+					JSONArray stList = new JSONArray(result);
+					for(int i=0; i < stList.length() ; i++) {
+					    JSONObject json_data = stList.getJSONObject(i);
+					    int id=json_data.getInt("CampusId");
+					    String name=json_data.getString("CampusName");
+					    String address = json_data.getString("Address");
+					    String Campus = name +  address;
+					    items.add(Campus);
+					}
+					ArrayAdapter<String> mArrayAdapter = new ArrayAdapter<String>(Campus.this,android.R.layout.simple_expandable_list_item_1, items);
+					listView.setAdapter(mArrayAdapter);
+					listView.setOnItemClickListener(new OnItemClickListener() {
+
+						@Override
+						public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+							Toast.makeText(Campus.this,"Campus Selected", Toast.LENGTH_SHORT).show();
+							
+						}
+					});
+				} catch (JSONException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 	    	}
 	    }		
 

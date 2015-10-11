@@ -14,38 +14,11 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/txtCamName"
+  	<ListView 
+  	     android:id="@+id/listCampus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/StudentID"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/txtAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtCamName"
-        android:layout_below="@+id/txtCamName"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/txtContactNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtAddress"
-        android:layout_below="@+id/txtAddress"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/StudentID"
-        android:text="List of Campuses:" />
+  	    />
+  	    
 
 </RelativeLayout>
